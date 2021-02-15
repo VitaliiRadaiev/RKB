@@ -380,6 +380,18 @@ button.btn-default {
 
 	& figure {}
 
+	& a {
+		color: #004DC1;
+		text-decoration: underline;
+		transition: all .2s ease;
+
+		@media (min-width: 992px) {
+			&:hover {
+				color: rgba(#004DC1, 0.6);
+			}
+		}
+	}
+
 }
 // === and TEXT CONTETN BLOCK ========================================================================
 

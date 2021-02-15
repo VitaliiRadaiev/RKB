@@ -49,6 +49,8 @@ $(document).ready(function () {
 	@@include('../common/header/header.js');
 	@@include('blocks/products-slider.js');
 	@@include('blocks/slider-images.js');
+	@@include('blocks/clients-block.js');
+	@@include('blocks/testimonials-block.js');
 
 
 	let submitBtns = [];
@@ -97,4 +99,4 @@ $(document).ready(function () {
 	
 });
 
-//@@include('plagins/lazy-load.js');
+@@include('blocks/maps.js');

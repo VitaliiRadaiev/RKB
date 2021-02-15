@@ -1087,6 +1087,90 @@ document.addEventListener('keydown', function(e) {
         });
     }
 };
+	{
+    let clientsBLock = document.querySelector('.clients-block');
+    if(clientsBLock) {
+        let dataSlider;
+        let slider = clientsBLock.querySelector('.clients-block__list');
+        function mobileSlider() {
+			if(document.documentElement.clientWidth <= 767 && slider.dataset.mobile == 'false') {
+				dataSlider = new Swiper(clientsBLock.querySelector('.clients-block__list'), {
+					slidesPerView: 1,
+					//centeredSlides: true,
+					speed: 600,
+                    navigation: {
+                        nextEl: clientsBLock.querySelector('.clients-block__slider-btn_next'),
+                        prevEl: clientsBLock.querySelector('.clients-block__slider-btn_prev'),
+                    },
+				});
+
+				slider.dataset.mobile = 'true';
+
+				//mySwiper.slideNext(0);
+			}
+
+			if(document.documentElement.clientWidth > 767) {
+				slider.dataset.mobile = 'false';
+
+				if(slider.classList.contains('swiper-container-initialized')) {
+					dataSlider.destroy();
+				}
+			}
+		}
+
+        mobileSlider();
+
+		window.addEventListener('resize', () => {
+			mobileSlider();
+		})
+    }
+};
+	
+{
+    let products = document.querySelector('.testimonials-block');
+    if(products) {
+        let dataSlider = new Swiper(products.querySelector('.testimonials-block__slider'), {
+            speed: 600,
+            //touchRatio: 0,
+            //simulateTouch: false,
+            //loop: true,
+            //preloadImages: false,
+            //lazy: true,
+            // Dotts
+            
+            pagination: {
+            	el: products.querySelector('.swiper-pagination'),
+            	clickable: true,
+            },
+            // Arrows
+            navigation: {
+                nextEl: products.querySelector('.testimonials-block__slider-btn_next'),
+                prevEl: products.querySelector('.testimonials-block__slider-btn_prev'),
+            },
+            
+            breakpoints: {
+                320: {
+                    slidesPerView: "auto",
+                    spaceBetween: 44,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 44,
+                },
+                992: {
+                    slidesPerView: 4,
+                    spaceBetween: 44,
+                },
+                1268: {
+                    slidesPerView: 5,
+                    spaceBetween: 44,
+                },
+            },
+            
+        });
+    }
+}
+;
 
 
 	let submitBtns = [];
@@ -1135,65 +1219,95 @@ document.addEventListener('keydown', function(e) {
 	
 });
 
-//// html example --- <img class="lazy" data-src="https://images.unsplash.com/photo-1606851091851-e8c8c0fca5ba?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" src="img/photo/placeholder.jpg" alt="img">
+{
 
 
-// === lazy load ==================================================================
-document.addEventListener("DOMContentLoaded", function () {
-	var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-    let active = false;
+	let isMap = document.getElementById("map1");
+	if(isMap) {
+		var map1;
 
-	if ("IntersectionObserver" in window) {
-        
-		let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
-			entries.forEach(function (entry) {
-				if (entry.isIntersecting) {
-					let lazyImage = entry.target;
-					lazyImage.src = lazyImage.dataset.src;
-					//lazyImage.srcset = lazyImage.dataset.srcset;
-					lazyImage.classList.remove("lazy");
-					lazyImageObserver.unobserve(lazyImage);
-				}
+		var center1 = {
+			lat: 50.015204932900744,
+			lng: 36.223057456609766,
+		}
+
+		var markerPosition1 = {
+			lat: 50.015204932900744,
+			lng: 36.223057456609766,
+		}
+
+		var map2;
+
+		var center2 = {
+			lat: 45.8433757333933,
+			lng: 9.009282499254253,
+		}
+
+		var markerPosition2 = {
+			lat: 45.8433757333933,
+			lng: 9.009282499254253,
+		}
+
+		function initMap() {
+
+		
+			map1 = new google.maps.Map(document.getElementById('map1'), {
+
+				center: {lat: center1.lat, lng: center1.lng},
+		
+				panControl: false,
+				mapTypeControl: false,
+				zoom: 16,
+
+
+				//styles: 
 			});
-		});
 
-		lazyImages.forEach(function (lazyImage) {
-			lazyImageObserver.observe(lazyImage);
-		});
-	} else {
-        const lazyLoad = function() {
-            if (active === false) {
-              active = true;
-              setTimeout(function() {
-                lazyImages.forEach(function(lazyImage) {
-                  if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none") {
-                    lazyImage.src = lazyImage.dataset.src;
-                    //lazyImage.srcset = lazyImage.dataset.srcset;
-                    lazyImage.classList.remove("lazy");
-        
-                    lazyImages = lazyImages.filter(function(image) {
-                      return image !== lazyImage;
-                    });
-        
-                    if (lazyImages.length === 0) {
-                      document.removeEventListener("scroll", lazyLoad);
-                      window.removeEventListener("resize", lazyLoad);
-                      window.removeEventListener("orientationchange", lazyLoad);
-                    }
-                  }
-                });
-        
-                active = false;
-              }, 200);
-            }
-          };
-      
-          lazyLoad();
-        
-          document.addEventListener("scroll", lazyLoad);
-          window.addEventListener("resize", lazyLoad);
-          window.addEventListener("orientationchange", lazyLoad);
-    }
-    
-});
-// === // lazy load ==================================================================;
+			map2 = new google.maps.Map(document.getElementById('map2'), {
+
+				center: {lat: center2.lat, lng: center2.lng},
+		
+				panControl: false,
+				mapTypeControl: false,
+				zoom: 16,
+
+
+				//styles: 
+			});
+
+
+			var marker1 = new google.maps.Marker({
+
+			
+			    position: {lat: markerPosition1.lat, lng: markerPosition1.lng},
+
+		
+			    map: map1,
+
+			
+			    title: '',
+			    label: '',
+
+		
+			   // icon: 'img/contact/googlMarker.svg',
+			});
+
+			var marker2 = new google.maps.Marker({
+
+			
+			    position: {lat: markerPosition2.lat, lng: markerPosition2.lng},
+
+		
+			    map: map2,
+
+			
+			    title: '',
+			    label: '',
+
+		
+			   // icon: 'img/contact/googlMarker.svg',
+			});
+
+		}
+	}
+};
