@@ -1187,6 +1187,7 @@
 
     @media (max-width: $md3+px) {
         padding: 60px 0 60px;
+        margin-bottom: 60px;
     }
 
     &__bg {
@@ -1284,6 +1285,11 @@
 
 
 .contact-block {
+    margin-bottom: 69px;
+
+    @media (max-width: $md4+px) {
+        margin-bottom: 53px;
+    }
 
     &__title {
         margin-bottom: 27px;
@@ -1291,23 +1297,53 @@
 
     &__item {
         display: flex;
-        margin-bottom: 60px;
+        margin-bottom: 30px;
+
+        @media (max-width: $md2+px) {
+            display: block;
+        }
+
+        @media (max-width: $md4+px) {
+            margin-bottom: 40px;
+        }
+
+        &:nth-child(3) {
+            & .contact-block__subtitle {
+                margin-bottom: 11px;
+            }
+
+            & .contact-block__info-item {
+                margin-bottom: 16px;
+            }
+        }
     }
 
     &__column {
         flex: 0 1 50%;
 
         &:first-child {
-            min-height: 353px;
+
             @media (min-width: 992px) {
                 & .contact-block__logo {
                     display: none;
                 }
             }
+
+            @media (max-width: $md2+px) {
+                margin-bottom: 10px;
+            }
         }
 
         &:last-child {
             padding-left: 20px;
+
+            @media (max-width: $md2+px) {
+                padding-left: 0;
+
+                & .contact-block__logo {
+                    display: none;
+                }
+            }
         }
 
         & .title-4 {
@@ -1316,14 +1352,27 @@
     }
 
     &__map {
-        height: 100%;
+        height: 353px;
         width: 100%;
+
+        @media (max-width: $md3+px) {
+            height: 190px;
+        }
     }
 
     &__logo {
         width: 100%;
         max-width: 188px;
         margin-bottom: 35px;
+
+        &_rkb {
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: $md2+px) {
+            margin-bottom: 20px;
+        }
+
         & img {
             max-width: 100%;
         }
@@ -1348,7 +1397,10 @@
         display: inline-block;
         margin-bottom: 31px;
         margin-right: 51px;
-        margin-bottom: 0;
+
+        @media (max-width: $md4+px) {
+            margin-bottom: 10px;
+        }
     }
 
     &__label {

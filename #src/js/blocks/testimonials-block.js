@@ -25,18 +25,22 @@
                 320: {
                     slidesPerView: "auto",
                     spaceBetween: 44,
+                   // freeMode: true,
                 },
                 768: {
                     slidesPerView: 3,
                     spaceBetween: 44,
+                   // freeMode: false,
                 },
                 992: {
                     slidesPerView: 4,
                     spaceBetween: 44,
+                   // freeMode: false,
                 },
                 1268: {
                     slidesPerView: 5,
                     spaceBetween: 44,
+                    //freeMode: false,
                 },
             },
             
