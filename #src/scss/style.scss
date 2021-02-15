@@ -1,0 +1,401 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+// ==== ШРИФТЫ ===========================================================================================
+@import "fonts";
+// ==== // ШРИФТЫ ===========================================================================================
+
+// ==== ПЕРЕМЕННЫЕ ===========================================================================================
+@import "vars"; 
+// ==== // ПЕРЕМЕННЫЕ ===========================================================================================
+
+
+// ==== НОРМАЛАЙЗ ===========================================================================================
+@import "normalize";
+// ==== // НОРМАЛАЙЗ ===========================================================================================
+
+//<МИКСИНЫ>===============================================================================================
+@import "mixins.scss";
+//</МИКСИНЫ>===============================================================================================
+
+//<ICOMOON>===============================================================================================
+@import "../icomoon/style";
+//</ICOMOON>===============================================================================================
+
+//<FANCYBOX>===============================================================================================
+@import "plagins/fancybox.scss";
+//<FANCYBOX>===============================================================================================
+
+// ==== ПЛАГИНЫ ===========================================================================================
+@import "plagins/swiper-bundle";
+//@import "plagins/drift-basic";
+// ==== // ПЛАГИНЫ ===========================================================================================
+
+// ==== НАЧАЛЬНЫЕ САТИЛИ ФОРМЫ ===========================================================================================
+@import "forms";
+// ==== НАЧАЛЬНЫЕ САТИЛИ ФОРМЫ ===========================================================================================
+
+// ==== BORDER ===========================================================================================
+@import "../common/burger/burger";
+// ==== BORDER ===========================================================================================
+
+// ==== POPUP ===========================================================================================
+@import "../common/popup/popup";
+// ==== // POPUP ===========================================================================================
+
+
+
+* {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+*,
+*:before,
+*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,
+:active {
+	outline: none;
+}
+a:focus,
+a:active {
+	outline: none;
+}
+aside,
+nav,
+footer,
+header,
+section {
+	display: block;
+}
+html {
+	font-size: 10px;
+}
+html,
+body {
+	height: 100%;
+	min-width: $minwidth;
+	margin: 0 auto;
+}
+body {
+	line-height: 1;
+	font-family: $mainFontFamily;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	color: $textColor;
+	font-size: 1.8rem;
+
+	opacity: 0;
+	transition: opacity .8s ease;
+
+	&.lock {
+		overflow: hidden;
+	}
+
+	&.is-load {
+		opacity: 1;
+	}
+
+}
+
+input,
+button,
+textarea {
+	font-family: $mainFontFamily;
+}
+input::-ms-clear {
+	display: none;
+}
+button {
+	cursor: pointer;
+}
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+a,
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+ul li {
+	list-style: none;
+}
+img {
+	vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+
+
+.center {
+	text-align: center;
+}
+
+
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+
+	&.loaded {
+	}
+}
+
+.page {
+	flex: 1 1 auto;
+}
+
+
+.container {
+	max-width: 1450px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.ibg {
+	position: relative;
+	img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+}
+
+.logo {
+	max-width: 170px;
+	width: 100%;
+
+	& img {
+		//width: 100%;
+	}
+}
+
+
+// === title ========================================================================
+.title-1 {
+	font-family: $titleFontFamily;
+	font-weight: 600;
+	font-size: 56px;
+	line-height: 1.214em;
+	color: #FFFFFF;
+	text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
+
+	@media (max-width: $md3+px) {
+		font-size: 48px;
+	}
+
+	@media (max-width: $md4+px) {
+		font-size: 38px;
+	}
+}
+
+.title-2 {
+	font-family: $titleFontFamily;
+	font-weight: 600;
+	font-size: 42px;
+	line-height: 1.214em;
+
+
+	@media (max-width: 374px) {
+		font-size: 30px;
+	}
+}
+
+.title-3 {
+	font-family: $titleFontFamily;
+	font-size: 39px;
+	line-height: 1.23em;
+}
+
+.title-4 {
+	font-family: $titleFontFamily;
+	font-size: 30px;
+	line-height: 1.23em;
+}
+
+.title-5 {
+	font-family: $mainFontFamily;
+	font-size: 22px;
+	line-height: 1.181em; 
+	font-weight: 500;
+}
+
+.title-6 {
+	font-family: $mainFontFamily;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 1.20em;
+}
+
+.suptitle {
+
+}
+.subtitle {
+
+}
+
+// === and title ========================================================================
+
+
+
+// === btn ========================================================================
+.btn-default {
+	font-family: $titleFontFamily;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 1.2em;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: #000000;
+	align-self: center;
+	min-height: 2.45em;
+	min-width: 17em;
+	padding: 0.5em 1em;
+	background: #FFFFFF;
+	border-radius: 2.275em;
+	transition: all .2s ease;
+	cursor: pointer;
+	@media (max-width: 374px) {
+        font-size: 16px;
+    }
+
+	@media (min-width: 992px) {
+		&:hover {
+			background-color: #62b3ff;
+		}
+	}
+
+	&.blue {
+		background: #2A43DE;
+		color: #fff;
+	}
+}
+
+button.btn-default {
+	
+}
+
+// === and btn ========================================================================
+
+.input {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	min-height: 45px;
+	background: #E7F3FF;
+	border-radius: 45.5px;
+	padding: 5px 25px;
+	font-family: $titleFontFamily;
+	font-size: 16px;
+	line-height: 1em;
+	
+	&::placeholder {
+		font-family: $titleFontFamily;
+		font-size: 16px;
+		line-height: 1em;
+	}
+}
+
+.textarea {
+
+}
+
+.link {
+
+}
+
+
+// === TEXT CONTETN BLOCK ========================================================================
+.text-content {
+	font-size: 18px;
+	line-height: 1.1666em;
+
+
+	& h1 {}
+	& h2 {
+
+	}
+	& h3 {}
+	& h4 {}
+
+	& h5 {
+
+	}
+	& h6 {
+		font-family: $titleFontFamily;
+		font-weight: bold;
+		font-size: 24px;
+		line-height: 1.20em;
+		margin-bottom: 0.46em;
+	}
+
+	& p {
+		margin-bottom: 0.88em;
+	}
+
+	& ul {
+
+	}
+
+	& ol {}
+
+	& figure {}
+
+}
+// === and TEXT CONTETN BLOCK ========================================================================
+
+
+// ==== BLOCKS =====================================================
+@import "../common/header/#header";
+@import "../common/footer/#footer";
+// ==== BLOCKS =====================================================
+
+
+// ==== PAGES =====================================================
+
+	// ==== HOME =====================================================
+	@import "pages/#home";
+	// ==== AND HOME =====================================================
+	
+// ==== AND PAGES =====================================================
+
+
