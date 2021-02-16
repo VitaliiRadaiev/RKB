@@ -4930,7 +4930,7 @@ textarea {
   }
 
   .test-sample .block-column-2__column .block-column-2__title {
-    text-align: left;
+    max-width: none;
   }
 
   .testimonial__text-wrap h3 {

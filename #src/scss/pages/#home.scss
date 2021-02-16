@@ -613,10 +613,11 @@
         }
 
         @media (max-width: $md3+px) {
-            & .block-column-2__title {
-                text-align: left;
-            }
             text-align: center;
+            & .block-column-2__title {
+                max-width: none;
+            }
+
         }
     }
 }
