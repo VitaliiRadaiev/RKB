@@ -1174,6 +1174,14 @@
         font-family:$titleFontFamily;
         font-size: 39px;
         line-height: 1.230em;
+
+        @media (max-width: $md3+px) {
+            font-size: 30px;
+        }
+
+        @media (max-width: $md4+px) {
+            font-size: 22px;
+        }
     }
 
 

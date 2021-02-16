@@ -232,6 +232,9 @@ textarea {
 	font-size: 42px;
 	line-height: 1.214em;
 
+	@media (max-width: $md4+px) {
+		font-size: 39px;
+	}
 
 	@media (max-width: 374px) {
 		font-size: 30px;

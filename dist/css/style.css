@@ -5006,6 +5006,10 @@ textarea {
     padding: 60px 0 52px;
   }
 
+  .learn-more-block__subtitle {
+    font-size: 30px;
+  }
+
   .test-sample-v2 {
     padding: 60px 0 60px;
     margin-bottom: 60px;
@@ -5063,6 +5067,10 @@ textarea {
 
   .popup-form button.btn-default {
     width: 100%;
+  }
+
+  .title-2 {
+    font-size: 39px;
   }
 
   .header__body {
@@ -5136,6 +5144,10 @@ textarea {
 
   .clients-block__title {
     margin-bottom: 0;
+  }
+
+  .learn-more-block__subtitle {
+    font-size: 22px;
   }
 
   .learn-more-block__link {
