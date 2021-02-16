@@ -3477,6 +3477,11 @@ textarea {
   min-height: 102px;
   background-color: #0B1867;
   width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 50;
 }
 
 .promo-header__bottom .input {
@@ -4688,7 +4693,6 @@ textarea {
 
   .promo-header__body {
     padding-left: 15px;
-    padding-bottom: 100px;
   }
 
   .promo-header__title img {
@@ -4812,7 +4816,18 @@ textarea {
   }
 
   .title-1 {
-    font-size: 48px;
+    font-size: 38px;
+  }
+
+  .header__body {
+    min-height: 95px;
+  }
+
+  .header__logo {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 110px;
+            flex: 0 0 110px;
+    height: 68px;
   }
 
   .header__inner {
@@ -4844,13 +4859,14 @@ textarea {
   }
 
   .promo-header__body {
+    padding-top: 115px;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
   }
 
   .promo-header__subtitle {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .cards__list > li {
@@ -4869,6 +4885,18 @@ textarea {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 33px;
             flex: 0 0 33px;
+  }
+
+  .download-catalog .block-column-2__column {
+    text-align: center;
+  }
+
+  .download-catalog .block-column-2__text-wrap {
+    max-width: none;
+  }
+
+  .download-catalog .block-column-2__title {
+    max-width: none;
   }
 
   .block-column-2__text-wrap {
@@ -4919,6 +4947,12 @@ textarea {
 
   .advantages__title {
     margin-bottom: 30px;
+    font-size: 30px;
+  }
+
+  .advantages__title > strong {
+    font-size: 39px;
+    line-height: 1.23em;
   }
 
   .advantages__subtitle {
@@ -5031,8 +5065,8 @@ textarea {
     width: 100%;
   }
 
-  .title-1 {
-    font-size: 38px;
+  .header__body {
+    min-height: 80px;
   }
 
   .header__logo {
@@ -5052,7 +5086,7 @@ textarea {
   }
 
   .promo-header__body {
-    padding-bottom: 65px;
+    padding-top: 80px;
   }
 
   .promo-header__title img {
@@ -5091,6 +5125,15 @@ textarea {
     padding: 25px 16px 34px;
   }
 
+  .advantages__title {
+    font-size: 22px;
+  }
+
+  .advantages__title > strong {
+    font-size: 39px;
+    line-height: 1.23em;
+  }
+
   .clients-block__title {
     margin-bottom: 0;
   }
@@ -5119,12 +5162,20 @@ textarea {
 }
 
 @media (max-width: 374px) {
+  .title-1 {
+    font-size: 28px;
+  }
+
   .title-2 {
     font-size: 30px;
   }
 
   .btn-default {
     font-size: 16px;
+  }
+
+  .promo-header__subtitle {
+    font-size: 20px;
   }
 
   .btn-blur {

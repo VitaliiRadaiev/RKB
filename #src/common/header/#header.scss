@@ -6,6 +6,7 @@
     width: 100%;
     transition: all .2s ease;
     z-index: 100;
+
     &._is-scroll {
         background-color: #fff;
         transition: all .2s ease;
@@ -47,8 +48,15 @@
         min-height: 160.2px;
         display: flex;
         align-items: center;
-
         transition: all .2s ease;
+
+        @media (max-width: $md3+px) {
+            min-height: 95px;
+        }
+
+        @media (max-width: $md4+px) {
+            min-height: 80px;
+        }
     }
 
     &__logo {
@@ -56,6 +64,11 @@
         flex: 0 0 170px;
         height: 128.4px;
         position: relative;
+
+        @media (max-width: $md3+px) {
+            flex: 0 0 110px;
+            height: 68px;
+        }
 
         @media (max-width: $md4+px) {
             flex: 0 0 69px;

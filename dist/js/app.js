@@ -27,19 +27,19 @@ $(document).ready(function () {
 	});
 
 	
-			// ==== ADD PADDING-TOP ================================
-			// {
-			// 	let wrapper = document.querySelector('.wrapper');
-			// 	if (wrapper) {
-			// 		let header = document.querySelector('.header');
-			// 		if(header) {
-			// 			let headerHeight = header.clientHeight;
-			// 			wrapper.style.paddingTop = headerHeight + 'px';
-			// 		}
+			// ==== ADD PADDING-BOTTOM ================================
+			{
+				let wrapper = document.querySelector('.wrapper');
+				if (wrapper) {
+					let captureForm = document.querySelector('.promo-header__bottom');
+					if(captureForm) {
+						let captureFormHeight = captureForm.clientHeight;
+						wrapper.style.paddingBottom = captureFormHeight + 'px';
+					}
 					
-			// 	}
-			// }
-			// ==== AND ADD PADDING-TOP ================================
+				}
+			}
+			// ==== AND ADD PADDING-BOTTOM ================================
 
 	//SlideToggle
 let _slideUp = (target, duration = 500) => {
